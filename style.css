@@ -1,0 +1,60 @@
+#hairmetal {
+  border-radius: 8px;
+}
+
+.chart::before {
+  position: absolute;
+  top: 50px;
+  left: 300px;
+  z-index: -1;
+  display: block;
+  width: 400px;
+  height: 300px;
+  content: " ";
+  background-repeat: no-repeat;
+  background-position: 50% 0;
+  background-size: cover;
+  opacity: 0.3;
+}
+
+.tooltip {
+  position: relative;
+  width: 175px;
+  height: 60px;
+  padding: 7px;
+  padding-top: 3px;
+  font: 12px sans-serif;
+  color: white;
+  text-align: center;
+  background: #547980;
+  border: 0;
+  border-radius: 10px;
+  pointer-events: none;
+}
+
+.axis-text {
+  font-family: sans-serif;
+  font-weight: bold;
+  fill: #547980;
+  text-anchor: middle;
+}
+
+.active {
+  font-weight: bold;
+  fill: #000;
+  fill: #547980;
+  transition: fill 0.3s ease-out;
+  text-anchor: middle;
+}
+
+.inactive {
+  font-weight: lighter;
+  fill: #547980;
+  transition: fill 0.3s ease-out;
+  text-anchor: middle;
+}
+
+.inactive:hover {
+  fill: #547980;
+  cursor: pointer;
+}
