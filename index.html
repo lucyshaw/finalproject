@@ -1,15 +1,73 @@
-<!DOCTYPE html>
-<html lang="en">
-	<head>
-		<meta charset="utf-8">
-		<title>Graph</title>
-		<link rel="stylesheet" type="text/css" href="style.css">
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.13.0/d3.min.js"></script>
+
+<html>
+        <head>
+            <!-- Plotly.js -->
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+             <link rel="stylesheet" href="css/style.css">
+             <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+            <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.13.0/d3.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.7.1/d3-tip.min.js"></script>
-	</head>
-	<body>
-		<div class="chart">
-		</div>
-		<script type="text/javascript" src="graph.js"></script>
-  </body>
-</html>
+        </head>
+            <body>
+                <div class="slideshow=container">
+                        <div class="mySlides fade" style="background-color: #181816">
+                            <div class="numbertext">1 / 2</div>
+                                <img src="https://d2drhpw56bvoc4.cloudfront.net/wp-content/uploads/2014/09/20170853/uni122553.jpg" style="width:80vw;height:100vh;object-fit: cover;object-position: 100% 0;">
+                                <div>
+                                <p id='firstslide'>"The world made remarkable progress in child survival in the past few decades, and millions of children have better survival chances than in 1990—1 in 
+                                26 children died before reaching age 5 in 2017, compared to 1 in 11 in 1990." <span style="color: lightskyblue; font-size: 30px"> - UNICEF</span></p>
+                              </div>
+                            </div>
+                              <div class="mySlides fade">
+                                    <div class="numbertext">2 / 2</div>
+                                    <div id="worldmortality" style="width:95vw;height:90vh; margin: 0 auto"></div>
+                                    <script src="js/world_deaths.js"></script>
+                                    <div class="text" style="text-align:center;bottom: 6vh;position: fixed;display: inline-block">Since 1990, the number of deaths of children under 5 has decreased by over 50%</div>
+                            </div>
+                            <div class="mySlides fade">
+                                    <div class="numbertext">1 / 2</div>
+                                        <p style="color:#344055;text-shadow: 2px 2px 5px grey;font-family:Karla-Regular;font-size: 35px;text-align:center">“Despite the global progress in reducing child mortality over the past few decades, an estimated 5.4 million children under age 5 died in 2017</p>
+                                            <div class="secretpopout">
+                                                <img style="width:50vw;height:50vh;object-fit: contain;margin: 0 auto;" src="https://i.pinimg.com/236x/e6/46/bc/e646bc46b637f94fc705a734a81e66a1--africa-tattoos-africa-map-tattoo.jpg"> 
+                                                <p style="color:#344055;text-shadow: 2px 2px 5px grey;font-family:Karla-Regular;font-size: 35px;text-align:center">...roughly half of those deaths occurred in sub-Saharan Africa.” – Unicef</p></div>
+                                        <div>
+                                    </div>
+                                    </div>
+                            <div class="mySlides fade">
+                                    <div class="numbertext">2 / 2</div>
+                                    <div id="stacked" style="width:95vw;height:90vh; margin:0 auto"></div>
+                                    <script src="js/stacked_area.js"></script>
+                                    <i class="fas fa-globe-africa" type="button" id='africabutton' onclick="shadeAfrica()"></i>
+                                    <i class="fas fa-globe" type="button" id='originalarea' onclick="originalArea()"></i>
+                            </div>
+                    <div class="mySlides fade">
+                            <div class="numbertext">2 / 2</div>
+                            <div id="map" style="width:95vw;height:90vh; margin:0 auto"></div>
+                            <script src="js/plot.js"></script>
+                            <div class="text" style="text-align:center;bottom: 6vh;position: fixed;display: inline-block">Caption Text</div>
+                            </div>
+                    <div class="mySlides fade">
+                                <div class="numbertext">2 / 2</div>
+                                <div id="chart" style="width:100vw;height:100vh; margin:0 auto"></div>
+                                <script src="js/graph.js"></script>
+                                <div class="text" style="text-align:center;bottom: 6vh;position: fixed;display: inline-block">Caption Text</div>
+                        </div>
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            </div>
+        <br>
+        <div style="text-align:center;bottom: 2vh;position: fixed;display: inline-block;left:45vw">
+                <span class="dot" onclick="currentSlide(1)"></span> 
+                <span class="dot" onclick="currentSlide(2)"></span> 
+                <span class="dot" onclick="currentSlide(3)"></span>
+                <span class="dot" onclick="currentSlide(4)"></span>  
+                <span class="dot" onclick="currentSlide(5)"></span>  
+                <span class="dot" onclick="currentSlide(6)"></span>  
+        </div>
+        <script src="js/slideshow.js"></script>
+        </body>
+        
+            </html>
