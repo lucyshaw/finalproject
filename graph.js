@@ -148,21 +148,21 @@ d3.csv("alleducationandmortality1.csv", function(err, educationMortality) {
     .attr("x", 0)
     .attr("y", 20)
     .attr("value", "Primary") // value to grab for event listener
-    .classed("active", true)
+    .classed("graph-active", true)
     .text("Females Out of Primary School (percent)");
 
   var secondaryLabel = labelsGroup.append("text")
     .attr("x", 0)
     .attr("y", 40)
     .attr("value", "Secondary") // value to grab for event listener
-    .classed("inactive", true)
+    .classed("graph-inactive", true)
     .text("Females Out of Secondary School (percent)");
 
   var bothLabel = labelsGroup.append("text")
     .attr("x", 0)
     .attr("y", 60)
     .attr("value", "Both") // value to grab for event listener
-    .classed("inactive", true)
+    .classed("graph-inactive", true)
     .text("Females Out of Primary & Secondary School (percent)");
 
   // append y axis
@@ -203,36 +203,36 @@ d3.csv("alleducationandmortality1.csv", function(err, educationMortality) {
         // changes classes to change bold text
         if (chosenXAxis === "Both") {
           secondaryLabel
-            .classed("active", false)
-            .classed("inactive", true);
+            .classed("graph-active", false)
+            .classed("graph-inactive", true);
           PrimaryLabel
-            .classed("active", false)
-            .classed("inactive", true);
+            .classed("graph-active", false)
+            .classed("graph-inactive", true);
           bothLabel
-            .classed("active", true)
-            .classed("inactive", false);
+            .classed("graph-active", true)
+            .classed("graph-inactive", false);
         }
         else if (chosenXAxis === "Secondary") {
           secondaryLabel
-            .classed("active", true)
-            .classed("inactive", false);
+            .classed("graph-active", true)
+            .classed("graph-inactive", false);
           PrimaryLabel
-            .classed("active", false)
-            .classed("inactive", true);
+            .classed("graph-active", false)
+            .classed("graph-inactive", true);
             bothLabel
-            .classed("active", false)
-            .classed("inactive", true);
+            .classed("graph-active", false)
+            .classed("graph-inactive", true);
         }
         else {
           secondaryLabel
-            .classed("active", false)
-            .classed("inactive", true);
+            .classed("graph-active", false)
+            .classed("graph-inactive", true);
           PrimaryLabel
-            .classed("active", true)
-            .classed("inactive", false);
+            .classed("graph-active", true)
+            .classed("graph-inactive", false);
             bothLabel
-            .classed("active", false)
-            .classed("inactive", true);
+            .classed("graph-active", false)
+            .classed("graph-inactive", true);
         }
       }
     });
