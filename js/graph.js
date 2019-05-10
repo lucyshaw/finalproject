@@ -1,5 +1,5 @@
-var svgHeight=.9*$(window).height();
-var svgWidth=.8*$(window).width();
+var svgHeight=.7*$(window).height();
+var svgWidth=.7*$(window).width();
 
 // var svgWidth = 1300;
 // var svgHeight = 750;
@@ -255,30 +255,30 @@ d3.csv("alleducationandmortality1.csv", function(err, educationMortality) {
 
 var rectangleWorld = svg.append("rect")
  .attr("x", .8*svgWidth)
- .attr("y", .14*svgHeight)
- .attr("width", 35)
- .attr("height", 13)
+ .attr("y", .13*svgHeight)
+ .attr("width", .03*svgWidth)
+ .attr("height", .02*svgHeight)
  .attr("fill", "#529999")
  .attr("opacity", .5);
 
 var rectangleSubAfrica = svg.append("rect")
  .attr("x", .8*svgWidth)
- .attr("y", .09*svgHeight)
- .attr("width", 35)
- .attr("height", 13)
+ .attr("y", .08*svgHeight)
+ .attr("width", .03*svgWidth)
+ .attr("height", .02*svgHeight)
  .attr("fill", "firebrick")
  .attr("opacity", .5);
 
 
 svg.append("text")
-   .attr("x", .83*svgWidth)
+   .attr("x", .84*svgWidth)
    .attr("y", .15*svgHeight)
    .attr("fill", "#529999")
    .attr("font-family", "Karla-Regular")
    .text("Rest of the World");
 
 svg.append("text")
-     .attr("x", .83*svgWidth)
+     .attr("x", .84*svgWidth)
      .attr("y", .1*svgHeight)
      .attr("fill", "firebrick")
      .attr("font-family", "Karla-Regular")
