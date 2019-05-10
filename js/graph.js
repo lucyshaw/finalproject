@@ -8,7 +8,8 @@ var margin = {
   top: .05*svgHeight,
   right: .2*svgWidth,
   bottom: .2*svgHeight,
-  left: .05*svgWidth
+  left: .05*svgWidth,
+  padding: .1*svgHeight
 };
 
 var width = svgWidth - margin.left - margin.right;
@@ -254,7 +255,7 @@ d3.csv("alleducationandmortality1.csv", function(err, educationMortality) {
 
 var rectangleWorld = svg.append("rect")
  .attr("x", .8*svgWidth)
- .attr("y", .2*svgHeight)
+ .attr("y", .14*svgHeight)
  .attr("width", 35)
  .attr("height", 13)
  .attr("fill", "#529999")
@@ -262,7 +263,7 @@ var rectangleWorld = svg.append("rect")
 
 var rectangleSubAfrica = svg.append("rect")
  .attr("x", .8*svgWidth)
- .attr("y", .1*svgHeight)
+ .attr("y", .09*svgHeight)
  .attr("width", 35)
  .attr("height", 13)
  .attr("fill", "firebrick")
@@ -271,7 +272,7 @@ var rectangleSubAfrica = svg.append("rect")
 
 svg.append("text")
    .attr("x", .83*svgWidth)
-   .attr("y", .2*svgHeight)
+   .attr("y", .15*svgHeight)
    .attr("fill", "#529999")
    .attr("font-family", "Karla-Regular")
    .text("Rest of the World");
