@@ -1,5 +1,5 @@
-var svgWidth = 960;
-var svgHeight = 550;
+var svgWidth = 1300;
+var svgHeight = 750;
 
 var margin = {
   top: 20,
@@ -22,6 +22,14 @@ var svg = d3
 // Append an SVG group
 var chartGroup = svg.append("g")
   .attr("transform", `translate(${margin.left}, ${margin.top})`);
+
+// chartGroup.append("text")
+//   .attr("x", (width / 2))             
+//   .attr("y", 0 - (margin.top / 2))
+//   .attr("text-anchor", "middle")  
+//   .style("font-size", "2vh") 
+//   .style("font-family","Karla-Regular")  
+//   .text("Female Education and Child Mortality Rate by Country");
 
 // Initial Params
 var chosenXAxis = "Primary";
@@ -149,6 +157,7 @@ d3.csv("alleducationandmortality1.csv", function(err, educationMortality) {
     .attr("y", 20)
     .attr("value", "Primary") // value to grab for event listener
     .classed("graph-active", true)
+    .style("font-family","Karla-Regular")
     .text("Females Out of Primary School (percent)");
 
   var secondaryLabel = labelsGroup.append("text")
@@ -156,6 +165,7 @@ d3.csv("alleducationandmortality1.csv", function(err, educationMortality) {
     .attr("y", 40)
     .attr("value", "Secondary") // value to grab for event listener
     .classed("graph-inactive", true)
+    .style("font-family","Karla-Regular")
     .text("Females Out of Secondary School (percent)");
 
   var bothLabel = labelsGroup.append("text")
@@ -163,6 +173,7 @@ d3.csv("alleducationandmortality1.csv", function(err, educationMortality) {
     .attr("y", 60)
     .attr("value", "Both") // value to grab for event listener
     .classed("graph-inactive", true)
+    .style("font-family","Karla-Regular")
     .text("Females Out of Primary & Secondary School (percent)");
 
   // append y axis
@@ -237,3 +248,34 @@ d3.csv("alleducationandmortality1.csv", function(err, educationMortality) {
       }
     });
 });
+
+var rectangleWorld = svg.append("rect")
+ .attr("x", 1100)
+ .attr("y", 100)
+ .attr("width", 35)
+ .attr("height", 13)
+ .attr("fill", "#529999")
+ .attr("opacity", .5);
+
+var rectangleSubAfrica = svg.append("rect")
+ .attr("x", 1100)
+ .attr("y", 118)
+ .attr("width", 35)
+ .attr("height", 13)
+ .attr("fill", "firebrick")
+ .attr("opacity", .5);
+
+
+svg.append("text")
+   .attr("x", 1150)
+   .attr("y", 112)
+   .attr("fill", "#529999")
+   .attr("font-family", "Karla-Regular")
+   .text("Rest of the World");
+
+svg.append("text")
+     .attr("x", 1150)
+     .attr("y", 130)
+     .attr("fill", "firebrick")
+     .attr("font-family", "Karla-Regular")
+     .text("Sub-Saharan Africa");
